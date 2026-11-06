@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lembar Refleksi & Tugas - Agama Katolik Kelas 7</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: #ffffff;
+            max-width: 650px;
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 6px solid #2b5b84; /* Warna khas teduh/edukasi */
+        }
+
+        .header-form {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header-form h2 {
+            color: #2b5b84;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .header-form p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        label span {
+            color: #e74c3c;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2b5b84;
+            box-shadow: 0 0 5px rgba(43, 91, 132, 0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .file-input {
+            padding: 8px 0;
+            font-size: 13px;
+        }
+
+        .btn-submit {
+            background-color: #2b5b84;
+            color: #fff;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #1f4260;
+        }
+
+        .alert-success {
+            display: none;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        @media (max-width: 500px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="header-form">
+            <h2>Lembar Refleksi & Tugas</h2>
+            <p>Pendidikan Agama Katolik & Budi Pekerti — SMP Kelas VII</p>
+        </div>
+
+        <div id="alertSuccess" class="alert-success">
+            Puji Tuhan! Tugas & Lembar Refleksi Anda telah berhasil dikirimkan.
+        </div>
+
+        <!-- Ganti action dengan backend URL atau layanan seperti Formspree jika ingin menerima hasil langsung ke email -->
+        <form id="reflectionForm" action="#" method="POST" enctype="multipart/form-data">
+            
+            <!-- Identitas Siswa -->
+            <div class="form-group">
+                <label for="nama">Nama Lengkap Siswa <span>*</span></label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Maria Fransiska" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="kelas">Kelas <span>*</span></label>
+                    <select id="kelas" name="kelas" required>
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="VII-A">VII-A</option>
+                        <option value="VII-B">VII-B</option>
+                        <option value="VII-C">VII-C</option>
+                        <option value="VII-D">VII-D</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="absen">No. Absen <span>*</span></label>
+                    <input type="number" id="absen" name="absen" min="1" max="50" placeholder="Contoh: 14" required>
+                </div>
+            </div>
+
+            <!-- Materi Pembelajaran Kelas 7 -->
+            <div class="form-group">
+                <label for="materi">Topik / Bab Materi <span>*</span></label>
+                <select id="materi" name="materi" required>
+                    <option value="">-- Pilih Topik Pembelajaran --</option>
+                    <option value="Bab 1: Aku Citra Allah yang Unik">Bab 1: Aku Citra Allah yang Unik</option>
+                    <option value="Bab 2: Kemampuan dan Keterbatasanku">Bab 2: Kemampuan dan Keterbatasanku</option>
+                    <option value="Bab 3: Mengembangkan Karunia Allah">Bab 3: Mengembangkan Karunia Allah</option>
+                    <option value="Bab 4: Suara Hati dan Moral Remaja">Bab 4: Suara Hati dan Moral Remaja</option>
+                    <option value="Bab 5: Yesus Teladan dan Sahabatku">Bab 5: Yesus Teladan dan Sahabatku</option>
+                    <option value="Bab 6: Peran Keluarga dan Teman dalam Hidupku">Bab 6: Peran Keluarga dan Teman dalam Hidupku</option>
+                </select>
+            </div>
+
+            <!-- Ayat Kitab Suci & Pemahaman -->
+            <div class="form-group">
+                <label for="ayat">Ayat Kitab Suci yang Direfleksikan</label>
+                <input type="text" id="ayat" name="ayat" placeholder="Contoh: Kejadian 1:26-28 atau Matius 25:14-30">
+            </div>
+
+            <!-- Refleksi Pribadi Siswa -->
+            <div class="form-group">
+                <label for="refleksi">Refleksi Pribadi & Aksi Nyata <span>*</span></label>
+                <textarea id="refleksi" name="refleksi" placeholder="Tuliskan apa yang kamu pelajari dari firman Tuhan dan bagaimana kamu menerapkannya di rumah/sekolah..." required></textarea>
+            </div>
+
+            <!-- Doa Singkat Siswa -->
+            <div class="form-group">
+                <label for="doa">Doa Pribadi Singkat</label>
+                <textarea id="doa" name="doa" placeholder="Tuliskan doa syukur atau permohonanmu kepada Tuhan terkait materi ini..."></textarea>
+            </div>
+
+            <!-- Unggah Tugas/Gambar (Opsional) -->
+            <div class="form-group">
+                <label for="lampiran">Unggah Foto/Berkas Tugas (Jika ada tugas menggambar/rangkuman)</label>
+                <input type="file" id="lampiran" name="lampiran" class="file-input" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+
+            <!-- Tombol Kirim -->
+            <button type="submit" class="btn-submit">Kirim Tugas & Refleksi</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('reflectionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('alertSuccess');
+            alertBox.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setTimeout(() => {
+                this.reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "Lembar Refleksi & Tugas Agama Katolik SMP Kelas 7",
+  "description": "Platform lembar refleksi pribadi, perikop Kitab Suci, dan pengumpulan tugas Pendidikan Agama Katolik dan Budi Pekerti SMP Kelas VII.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
